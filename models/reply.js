@@ -12,4 +12,4 @@ var ReplySchema = new Schema({
 	content_is_html: { type: Boolean }
 });
 
-mongoose.model('Reply', ReplySchema);
+module.exports = mongoose.model('Reply', ReplySchema);

@@ -8,4 +8,4 @@ var TagCollectSchema = new Schema({
   create_at: { type: Date, default: Date.now }
 });
 
-mongoose.model('TagCollect', TagCollectSchema);
+module.exports = mongoose.model('TagCollect', TagCollectSchema);

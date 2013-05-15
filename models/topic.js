@@ -17,4 +17,4 @@ var TopicSchema = new Schema({
   content_is_html: { type: Boolean }
 });
 
-mongoose.model('Topic', TopicSchema);
+module.exports = mongoose.model('Topic', TopicSchema);

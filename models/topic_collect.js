@@ -8,4 +8,4 @@ var TopicCollectSchema = new Schema({
   create_at: { type: Date, default: Date.now }
 });
 
-mongoose.model('TopicCollect', TopicCollectSchema);
+module.exports = mongoose.model('TopicCollect', TopicCollectSchema);

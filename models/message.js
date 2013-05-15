@@ -19,4 +19,4 @@ var MessageSchema = new Schema({
   create_at: { type: Date, default: Date.now }
 });
 
-mongoose.model('Message', MessageSchema);
+module.exports = mongoose.model('Message', MessageSchema);

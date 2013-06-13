@@ -19,7 +19,6 @@ exports.getMessagesCount = function (id, callback) {
   Message.count({master_id: id, has_read: false}, callback);
 };
 
-
 /**
  * 根据消息Id获取消息
  * Callback:
@@ -86,4 +85,13 @@ exports.getMessagesByUserId = function (userId, callback) {
  */
 exports.getUnreadMessageByUserId = function (userId, callback) {
   Message.find({master_id: userId, has_read: false}, callback);
+};
+
+exports.newAndSave = function (type, master_id, author_id, topic_id, callback) {
+  var message = new Message();
+  message.type = 'reply';
+  message.master_id = master_id;
+  message.author_id = author_id;
+  message.topic_id = topic_id;
+  message.save(callback);
 };

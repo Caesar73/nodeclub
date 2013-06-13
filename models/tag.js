@@ -11,4 +11,4 @@ var TagSchema = new Schema({
   create_at: { type: Date, default: Date.now }
 });
 
-mongoose.model('Tag', TagSchema);
+module.exports = mongoose.model('Tag', TagSchema);

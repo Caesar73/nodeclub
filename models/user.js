@@ -32,16 +32,12 @@ var UserSchema = new Schema({
   receive_at_mail: { type: Boolean, default: false },
   from_wp: { type: Boolean },
 
-  retrieve_time : {type: Number},
-  retrieve_key : {type: String}
+  retrieve_time: {type: Number},
+  retrieve_key: {type: String}
 });
 
 UserSchema.virtual('avatar_url').get(function () {
-  var avatar_url = this.profile_image_url || this.avatar;
-  if (!avatar_url) {
-    avatar_url = config.site_static_host + '/images/user_icon&48.png';
-  }
-  return avatar_url;
+  return this.profile_image_url || this.avatar || config.site_static_host + '/images/user_icon&48.png';
 });
 
-mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);

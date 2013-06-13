@@ -8,4 +8,4 @@ var TopicTagSchema = new Schema({
   create_at: { type: Date, default: Date.now }
 });
 
-mongoose.model('TopicTag', TopicTagSchema);
+module.exports = mongoose.model('TopicTag', TopicTagSchema);

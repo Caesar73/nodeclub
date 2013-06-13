@@ -8,4 +8,4 @@ var RelationSchema = new Schema({
   create_at: { type: Date, default: Date.now }
 });
 
-mongoose.model('Relation', RelationSchema);
+module.exports = mongoose.model('Relation', RelationSchema);
